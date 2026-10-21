@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 8px;
+            
+        }
+
+        .child{
+            width: 200px;
+            height: 20px;
+        }
+
+        .container{
+            width: 218px;
+            position: relative;
+            
+        }
+
+        .extra{
+            height: 1080px;
+        }
+
+        .target1{
+            position:fixed;
+            top: 0px;
+            right: 6px;
+        }
+
+        .target2{
+            position: fixed;
+            top: -40px;
+            left: 56px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav><a href="../index.html">Volver atrás</a> </nav>
+    <div class="extra"></div>
+    <div class="container">
+        <div class="child presibling"></div>
+        <div class="child target1"></div>
+        <div class="child target2"></div>
+        <div class="child postsibling"></div>
+    </div>
+</body>
+</html>
