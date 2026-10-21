@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav><a href="../index.html">Volver atrás</a> </nav>
+    <section>
+        <h1>Selectores múltiples</h1>
+        <header class="ex1-1">Header</header>
+        <div class="ex1-2">Div</div>
+
+    </section>
+
+    <section>
+        <h1 id="select-desc">Selectores descendientes</h1>
+            <div class="ex2">
+                <ul>
+                    <li>Texto</li>
+                    <li><a href="#select-desc">Enlace</a></li>
+                    <li>Texto</li>
+                    <li><a href="#select-desc">Enlace</a></li>
+                </ul>
+            </div>
+             
+    </section>
+
+    <section>
+        <h1 id="select-desc2">Selectores hijos directos</h1>
+            <div class="ex3">
+                <ul>
+                    <li>Texto</li>
+                    <li><a href="#select-desc2">Enlace</a></li>
+                    <li>Texto</li>
+                    <ul>
+                        <li>text</li>
+                        <li><a href="#select-desc2">Enlace</a></li>
+                    </ul>
+                    <li><a href="#select-desc2">Enlace</a></li>
+                </ul>
+            </div>
+             
+    </section>
+
+    <section>
+        <h1 id="select-desc3">Selectores hermanos adyacentes</h1>
+            <div class="ex4">
+                <ul>
+                    <li>Texto</li>
+                    <li><a href="#select-desc3">Enlace</a></li>
+                    <li>Texto</li>
+                    <li><a href="#select-desc3">Enlace</a></li>
+                </ul>
+            </div>
+             
+    </section>
+
+    <section>
+        <h1 id="select-desc4">Pseudoclases</h1>
+            <div class="ex5">
+                <ul>
+                    <li>Texto</li>
+                    <li><a href="#select-desc4">Enlace</a></li>
+                    <li>Texto</li>
+                    <li><a href="#select-desc4">Enlace</a></li>
+                </ul>
+            </div>
+             
+    </section>
+    
+</body>
+</html>
