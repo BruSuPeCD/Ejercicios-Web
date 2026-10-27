@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter y Setter</title>
+    <script>
+        class Car {
+            constructor(brand, model, speed) {
+                this.brand = brand;
+                this.model = model;
+                this.speedToGo = speed; // O usa this._speed = speed;
+            }
+
+            get speed() {
+                return this.speedToGo;
+            }
+
+            get nextSpeed() {
+                return this.speedToGo + 5;
+            }
+
+            set speed(value) {
+                this.speedToGo = value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav><a href="../index.html">← Volver atrás</a><div>Pulsar F12 para abrir las herramientas de desarrollo</div></nav>
+    <script>
+        let car = new Car("Citroën", "Xsara", 15);
+        console.log(car.speed); // 15
+        console.log(car.nextSpeed); // 20
+        car.speed = 20;
+        console.log(car.speed); // 20
+    </script>
+</body>
+</html>

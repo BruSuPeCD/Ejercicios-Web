@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <script>
+        class Vehicle {
+            constructor(brand) {
+                this.brand = brand;
+            }
+
+            start() {
+                console.log(this.brand + " is starting.");
+            }
+        }
+
+       class Car extends Vehicle {
+            getDesc() {
+                console.log(this.brand, "is ready");
+            }
+
+            
+        }
+
+        
+</head>
+<body>
+    <nav><a href="../index.html">← Volver atrás</a><div>Pulsar F12 para abrir las herramientas de desarrollo</div></nav>
+
+    <script>
+        let v = new Vehicle("Toyota");
+        v.start(); // Output: Toyota is starting.
+    </script>
+</body>
+</html>
