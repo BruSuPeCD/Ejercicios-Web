@@ -71,7 +71,25 @@
             box-sizing: border-box;
             min-height: 500px; /*ia*/
             border: 2px solid #e76b6b;
-            padding: 8px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            padding: 8px 8px 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .zona-pronosticos::before {
+            content: "";
+            position: absolute;
+            top: 44px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 2px solid #e76b6b;
+            border-bottom: 0;
+            pointer-events: none;
         }
 
         .zona-combinaciones {
@@ -83,7 +101,8 @@
         }
 
         .zona-pronosticos h2,
-        .zona-combinaciones h2 {
+        .zona-combinaciones h2,
+        .bloques-pronosticos h2 {
             margin: 0;
             color: #e76b6b;
             font-size: 1em;
@@ -126,9 +145,13 @@
         .partidos {
             display: grid;
             grid-template-rows: repeat(14, 22px);
-            gap: 0;
-            margin-top: 8px;
-            padding: 10px 4px;
+            align-content: space-between;
+            flex: 1;
+            min-height: 0;
+            box-sizing: border-box;
+            margin-top: 36px;
+            margin-bottom: 0;
+            padding: 9.6px 4px;
         }
 
         .fila-partido {
@@ -168,16 +191,29 @@
 
         .bloques-pronosticos {
             display: flex;
-            gap: 2px;
+            position: relative;
+            gap: 9.6px;
+        }
+
+        .bloques-pronosticos h2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
         }
 
         .bloque-columna {
             display: grid;
-            grid-template-columns: repeat(3, 31px); 
+            grid-template-columns: repeat(3, 24.6px);
             grid-template-rows: repeat(14, 22px);
-            border: 1px solid #e76b6b;
+            column-gap: 9.6px;
+            align-content: space-between;
+            padding: 9.6px 0;
+            border-top: 1px solid #e76b6b;
+            border-bottom: 1px solid #e76b6b;
             background-color: #fff;
             margin-top: 45px;
+            margin-bottom: 1px;
         }
 
         .bloque-columna:nth-child(even) {
@@ -191,14 +227,9 @@
             font-size: 0.75em;
             font-weight: bold;
             color: #e76b6b;
-            border-right: 1px solid #f2a4a4;
-            border-bottom: 1px solid #f2a4a4;
+            border: 1px solid #f2a4a4;
             box-sizing: border-box; /*ia*/
             user-select: none; /*ia*/
-        }
-
-        .casilla-signo:nth-child(3n) {
-            border-right: none; /*ia*/
         }
 
     </style>
@@ -224,7 +255,6 @@
 
         <div class="quiniela-cuerpo">
             <div class="zona-pronosticos">
-                <h2>PRONÓSTICOS</h2>
                     
                 <div class="partidos">
                     <div class="fila-partido">
@@ -301,7 +331,7 @@
             </div>
             
             <div class="bloques-pronosticos">
-            <h2></h2>
+                <h2>PRONÓSTICOS</h2>
                 <div class="bloque-columna">
                     <span class="casilla-signo">1</span><span class="casilla-signo">X</span><span class="casilla-signo">2</span>
                     <span class="casilla-signo">1</span><span class="casilla-signo">X</span><span class="casilla-signo">2</span>
