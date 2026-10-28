@@ -17,7 +17,7 @@
         }
 
         .cabecera-central {
-            flex-grow: 1;
+            flex-grow: 1; /*ia*/
             margin: 0 20px;
             font-family: "Arial Narrow", Arial, sans-serif;
         }
@@ -26,7 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 11%;
+            gap: 11%; /*ia*/
             background-color: #5B96C4;
             color: white;
             font-size: 1.6em;
@@ -39,7 +39,7 @@
             font-size: 0.85em;     
             padding: 4px 10px;     
             line-height: 1.25;     
-            letter-spacing: 0;     
+            letter-spacing: 0; /*ia*/    
             margin: 3px 0;
         }
 
@@ -69,7 +69,7 @@
         .zona-pronosticos {
             width: 320px; 
             box-sizing: border-box;
-            min-height: 500px;
+            min-height: 500px; /*ia*/
             border: 2px solid #e76b6b;
             padding: 8px;
         }
@@ -104,29 +104,29 @@
             justify-content: space-between;
             align-items: baseline;
             font-family: 'Arial Narrow', 'Roboto Condensed', sans-serif;
-            font-weight: bold;
+            font-weight: bold; /*ia*/
             color: #22587E;
-            text-transform: uppercase;
+            text-transform: uppercase; /*ia*/
             font-size: 0.8em; 
             letter-spacing: 0px;
         }
 
         .fila-partido .puntos {
             flex-grow: 1;
-            overflow: hidden;
-            white-space: nowrap;
+            overflow: hidden; /*ia*/
+            white-space: nowrap; /*ia*/
             margin: 0 3px;
         }
 
         .fila-partido .num {
             text-align: right;
-            min-width: 18px;
+            min-width: 18px; /*ia*/
         }
 
         .partidos {
-            display: flex;
-            flex-direction: column;
-            gap: 12px; 
+            display: grid;
+            grid-template-rows: repeat(14, 22px);
+            gap: 0;
             margin-top: 8px;
             padding: 10px 4px;
         }
@@ -134,7 +134,11 @@
         .fila-partido {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            height: 22px;
+            box-sizing: border-box;
             font-family: 'Arial Narrow', 'Roboto Condensed', sans-serif;
             font-weight: bold;
             color: #22587E;
@@ -144,16 +148,21 @@
             white-space: nowrap;
         }
 
+        .fila-partido .nombre {
+            flex: 0 0 auto; /*ia*/
+        }
+
         .fila-partido .puntos {
             flex-grow: 1;
             overflow: hidden;         
             white-space: nowrap;      
+            min-width: 0;
             margin: 0 4px;
         }
 
         .fila-partido .num {
             text-align: right;
-            min-width: 20px;
+            flex: 0 0 20px;
         }
 
 
@@ -164,11 +173,11 @@
 
         .bloque-columna {
             display: grid;
-            grid-template-columns: repeat(3, 18px);
+            grid-template-columns: repeat(3, 31px); 
             grid-template-rows: repeat(14, 22px);
             border: 1px solid #e76b6b;
             background-color: #fff;
-            margin-top: 28px;
+            margin-top: 45px;
         }
 
         .bloque-columna:nth-child(even) {
@@ -184,12 +193,12 @@
             color: #e76b6b;
             border-right: 1px solid #f2a4a4;
             border-bottom: 1px solid #f2a4a4;
-            box-sizing: border-box;
-            user-select: none;
+            box-sizing: border-box; /*ia*/
+            user-select: none; /*ia*/
         }
 
         .casilla-signo:nth-child(3n) {
-            border-right: none;
+            border-right: none; /*ia*/
         }
 
     </style>
@@ -220,32 +229,32 @@
                 <div class="partidos">
                     <div class="fila-partido">
                         <span class="nombre">DEPORTIVO-R. SOCIEDAD</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">1</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">RAYO VALLECANO-VALENCIA</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">2</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">ATHLETIC CLUB-BARCELONA</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">3</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">SPORTING-R. MADRID</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">4</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">BETIS-VILLARREAL</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">5</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">ESPANYOL-GETAFE</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">6</span>
                     </div>
                     <div class="fila-partido">
@@ -255,44 +264,44 @@
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">ALMERÍA-LEGANÉS</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">8</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">MIRANDÉS-ZARAGOZA</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">9</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">LLAGOSTERA-OSASUNA</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">10</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">OVIEDO-LUGO</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">11</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">GIMNÀSTIC-ALBACETE</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">12</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">ALCORCÓN-MALLORCA</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">13</span>
                     </div>
                     <div class="fila-partido">
                         <span class="nombre">CÓRDOBA-VALLADOLID</span>
-                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+                        <span class="puntos">. . . . . . . . . . . . . . . . . . . . . .</span>
                         <span class="num">14</span>
                     </div>
                 </div>
             </div>
             
             <div class="bloques-pronosticos">
-            <h2>PRONÓSTICOS</h2>
+            <h2></h2>
                 <div class="bloque-columna">
                     <span class="casilla-signo">1</span><span class="casilla-signo">X</span><span class="casilla-signo">2</span>
                     <span class="casilla-signo">1</span><span class="casilla-signo">X</span><span class="casilla-signo">2</span>
