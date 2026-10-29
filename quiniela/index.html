@@ -61,8 +61,9 @@
         .quiniela-cuerpo {
             display: flex;
             justify-content: flex-start; 
-            gap: 0;
-            margin: 12px 4%;
+            align-items: stretch;
+            gap: 8px;
+            margin: 12px 2% 12px 4%;
             font-family: "Arial Narrow", Arial, sans-serif;
         }
 
@@ -77,11 +78,28 @@
         }
 
         .zona-combinaciones {
-            flex-grow: 1; 
+            position: relative;
+            display: flex;
+            flex: 0 0 110px;
+            flex-direction: column;
             box-sizing: border-box;
             min-height: 500px;
-            border: 2px solid #e76b6b;
-            padding: 8px;
+            margin-left: 30px;
+            padding: 0;
+        }
+
+        .zona-combinaciones::before {/*ia*/
+            content: "";
+            position: absolute;
+            inset: 0 0 -54px;
+            background:/*ia*/
+                linear-gradient(#e76b6b, #e76b6b) left top / 100% 2px no-repeat,
+                linear-gradient(#e76b6b, #e76b6b) left top / 2px 100% no-repeat,
+                linear-gradient(#e76b6b, #e76b6b) right top / 2px 72% no-repeat,
+                linear-gradient(#e76b6b, #e76b6b) right top 72% / 48% 2px no-repeat,
+                linear-gradient(to bottom, transparent 72%, #e76b6b 72%) 52% top / 2px 100% no-repeat,
+                linear-gradient(#e76b6b, #e76b6b) left bottom / 52% 2px no-repeat;
+            pointer-events: none;
         }
 
         .zona-pronosticos h2,
@@ -92,6 +110,133 @@
             font-size: 1em;
             font-weight: normal;
             text-align: center;
+        }
+
+        .zona-combinaciones h2 {
+            display: flex;
+            flex: 0 0 45px;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            border: 2px solid #e76b6b;
+            background-color: #fff;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .combinaciones-lista {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));/*ia*/
+            gap: 8px;
+            flex: 1;
+            min-height: 0;
+            margin-bottom: 1px;
+            padding: 0 10px;
+        }
+
+        .combinaciones-columna {
+            position: relative;
+            display: grid;
+            grid-template-rows:/*ia*/
+                6px
+                repeat(4, minmax(22px, 1fr))
+                6px
+                repeat(4, minmax(22px, 1fr))
+                6px
+                repeat(3, minmax(22px, 1fr))
+                6px
+                repeat(3, minmax(22px, 1fr))
+                6px;
+            min-height: 0;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(1) {
+            grid-row: 2;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(2) {
+            grid-row: 3;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(3) {
+            grid-row: 4;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(4) {
+            grid-row: 5;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(5) {
+            grid-row: 7;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(6) {
+            grid-row: 8;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(7) {
+            grid-row: 9;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(8) {
+            grid-row: 10;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(9) {
+            grid-row: 12;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(10) {
+            grid-row: 13;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(11) {
+            grid-row: 14;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(12) {
+            grid-row: 16;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(13) {
+            grid-row: 17;
+        }
+
+        .combinaciones-columna .combinacion-numero:nth-child(14) {
+            grid-row: 18;
+        }
+
+        .combinacion-numero {
+            width: 27px;
+            height: 27px;
+            align-self: center;
+            justify-self: center;
+            box-sizing: border-box;
+            border: 1px solid #f2a4a4;
+            color: #e76b6b;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .combinaciones-indicacion {
+            color: #e76b6b;
+            font-size: 0.8em;
+            line-height: 1.15;
+            text-align: center;
+        }
+
+        .combinaciones-columna.triples .combinaciones-indicacion {/*ia*/
+            grid-row: 13;
+        }
+
+        .combinaciones-columna.dobles .combinaciones-indicacion {/*ia*/
+            position: absolute;
+            top: calc(100% + 4px);/*ia*/
+            left: 50%;/*ia*/
+            width: max-content;
+            transform: translateX(-50%);/*ia*/
         }
 
         .partidos {
@@ -157,10 +302,11 @@
             box-sizing: border-box;
             padding: 0 4px;
             font-family: 'Arial Narrow', 'Roboto Condensed', sans-serif;
-            font-weight: bold;
-            color: #22587E;
+            font-weight: 540;
+            color: #5b97c4;
             text-transform: uppercase;
             font-size: 0.8em;
+            transform: scaleY(1.75);
             letter-spacing: 0px;
             white-space: nowrap;
         }
@@ -196,7 +342,7 @@
         }
 
         .bloques-pronosticos::before,
-        .bloques-pronosticos::after {
+        .bloques-pronosticos::after { /*ia*/
             content: "";
             position: absolute;
             top: 45px;
@@ -205,12 +351,12 @@
             pointer-events: none;
         }
 
-        .bloques-pronosticos::before {
+        .bloques-pronosticos::before { /*ia*/
             left: -8px;
             width: 8px;
         }
 
-        .bloques-pronosticos::after {
+        .bloques-pronosticos::after { /*ia*/
             right: -2px;
             width: 2px;
         }
@@ -220,11 +366,19 @@
             top: 0;
             right: 0;
             left: 0;
+            height: 45px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e76b6b;
+            letter-spacing: 41px;
+            font-weight: 700;
         }
 
         .bloque-columna {
             display: grid;
-            grid-template-columns: repeat(3, 24.6px);
+            grid-template-columns: repeat(3, 23.6px);
             grid-template-rows: /*ia*/
                 6px
                 repeat(4, minmax(22px, 1fr))
@@ -250,7 +404,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 22px;
+            /* height: 22px; */
+            height: 27px;
+            width: 20px;
             align-self: center;
             background-color: #fff;
             font-size: 0.75em;
@@ -549,12 +705,41 @@
                 </div>
             </div>
 
-
-        </div>
-
             <div class="zona-combinaciones">
                 <h2>COMBINACIONES</h2>
+                <div class="combinaciones-lista">
+                    <div class="combinaciones-columna dobles" aria-label="Dobles">
+                        <span class="combinacion-numero">1</span>
+                        <span class="combinacion-numero">2</span>
+                        <span class="combinacion-numero">3</span>
+                        <span class="combinacion-numero">4</span>
+                        <span class="combinacion-numero">5</span>
+                        <span class="combinacion-numero">6</span>
+                        <span class="combinacion-numero">7</span>
+                        <span class="combinacion-numero">8</span>
+                        <span class="combinacion-numero">9</span>
+                        <span class="combinacion-numero">10</span>
+                        <span class="combinacion-numero">11</span>
+                        <span class="combinacion-numero">12</span>
+                        <span class="combinacion-numero">13</span>
+                        <span class="combinacion-numero">14</span>
+                        <span class="combinaciones-indicacion">↑<br>DOBLES</span>
+                    </div>
+                    <div class="combinaciones-columna triples" aria-label="Triples">
+                        <span class="combinacion-numero">1</span>
+                        <span class="combinacion-numero">2</span>
+                        <span class="combinacion-numero">3</span>
+                        <span class="combinacion-numero">4</span>
+                        <span class="combinacion-numero">5</span>
+                        <span class="combinacion-numero">6</span>
+                        <span class="combinacion-numero">7</span>
+                        <span class="combinacion-numero">8</span>
+                        <span class="combinacion-numero">9</span>
+                        <span class="combinaciones-indicacion">↑<br>TRIPLES</span>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </body>
