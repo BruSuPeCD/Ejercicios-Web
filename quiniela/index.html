@@ -423,6 +423,128 @@
             background-color: #e76b6b;
         }
 
+        .quiniela-inferior {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 786.9px;
+            column-gap: 8px;
+            width: calc(94% - 148px);
+            margin: 6px 2% 12px 4%;
+            font-family: "Arial Narrow", Arial, sans-serif;
+        }
+
+        .valoracion-pleno,
+        .bloques-inferiores {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 786.9px;
+            column-gap: 8px;
+            align-items: center;
+        }
+
+        .valoracion-pleno {
+            grid-column: 1 / -1;
+            min-height: 34px;
+        }
+
+        .valoracion {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: #22587E;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .valoracion-casilla {
+            display: inline-flex;
+            width: 28px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #5b97c4;
+            box-sizing: border-box;
+            font-size: 1.25em;
+        }
+
+        .pleno-partidos {
+            display: grid;
+            grid-template-columns: 150px repeat(2, minmax(0, 1fr));
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pleno-titulo {
+            color: #e76b6b;
+            font-size: 1.1em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .pleno-partido {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 4px;
+            color: #22587E;
+            font-size: 0.9em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .pleno-partido .puntos {
+            flex: 1;
+            min-width: 8px;
+            overflow: hidden;
+            color: #5b97c4;
+            white-space: nowrap;
+        }
+
+        .pleno-casillas {
+            display: flex;
+            gap: 4px;
+        }
+
+        .pleno-casillas span {
+            display: inline-flex;
+            width: 26px;
+            height: 28px;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #f2a4a4;
+            box-sizing: border-box;
+            color: #e76b6b;
+            font-weight: normal;
+        }
+
+        .bloques-inferiores {
+            grid-column: 1 / -1;
+            min-height: 30px;
+        }
+
+        .bloques-etiqueta {
+            color: #22587E;
+            font-size: 1.1em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .numeros-bloque {
+            display: grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            gap: 9.6px;
+        }
+
+        .numero-bloque {
+            display: flex;
+            height: 28px;
+            align-items: center;
+            justify-content: center;
+            background-color: #e76b6b;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -740,6 +862,34 @@
                 </div>
             </div>
 
+        </div>
+        <div class="quiniela-inferior">
+            <div class="valoracion-pleno">
+                <div class="valoracion">
+                    <span>BIEN</span><span class="valoracion-casilla">X</span>
+                    <span>MAL</span><span class="valoracion-casilla">X</span>
+                </div>
+                <div class="pleno-partidos">
+                    <span class="pleno-titulo">PLENO AL 15</span>
+                    <div class="pleno-partido">
+                        <span>AT. MADRID</span><span class="puntos">. . . . . . . . . .</span>
+                        <span class="pleno-casillas"><span>0</span><span>1</span><span>2</span><span>M</span></span>
+                    </div>
+                    <div class="pleno-partido">
+                        <span>LAS PALMAS</span><span class="puntos">. . . . . . . . . .</span>
+                        <span class="pleno-casillas"><span>0</span><span>1</span><span>2</span><span>M</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bloques-inferiores">
+                <span class="bloques-etiqueta">BLOQUES →</span>
+                <div class="numeros-bloque">
+                    <span class="numero-bloque">1</span><span class="numero-bloque">2</span>
+                    <span class="numero-bloque">3</span><span class="numero-bloque">4</span>
+                    <span class="numero-bloque">5</span><span class="numero-bloque">6</span>
+                    <span class="numero-bloque">7</span><span class="numero-bloque">8</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
